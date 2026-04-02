@@ -141,11 +141,7 @@ Open the corresponding ground truth model from `error-characterisation/groundtru
 
 If the generated model does not match the ground truth, adjust either the assumptions directly in the app or revise the description and regenerate. Repeat until the model converges to the ground truth.
 
-
-
 ---
----
-
 
 ## Results and Artifacts
 
