@@ -69,18 +69,6 @@ If it loads without errors, the installation is complete.
 
 ---
 
-## Hardware Requirements
-
-| Component | Minimum | Recommended |
-|-----------|---------|-------------|
-| RAM | 8 GB | 16 GB |
-| CPU | 4 cores | Intel i5/i7 or AMD Ryzen 5/7 (6–8 cores) |
-| Storage | 20 GB free | 256–512 GB SSD |
-| GPU | Not required | Not required |
-| OS | Windows 10 / Ubuntu 20.04 or later | Windows 11 / Ubuntu 22.04 |
-| Internet | Required (Gemini API) | Required |
-
----
 
 ## Experimental Environment
 
