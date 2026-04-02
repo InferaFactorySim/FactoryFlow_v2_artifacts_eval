@@ -119,3 +119,7 @@ The `error-characterisation/` directory contains all files needed to reproduce t
 ## License
 
 The license file is included in the GitHub repository.
+
+## DOI
+P, L., & Karanjkar, N. (2026). InferaFactorySim/FactoryFlow_v2_artifacts_eval: artifacts (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.19380593
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19380593.svg)](https://doi.org/10.5281/zenodo.19380593)
