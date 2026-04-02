@@ -102,6 +102,62 @@ If it loads without errors, the installation is complete.
 | GPU | None |
 
 ---
+## Methodology
+
+The experiment consisted of 35 factory system scenarios, each described at two levels of granularity — a coarse description and a detailed description — resulting in 70 runs in total. The two description types were evaluated independently to assess how the level of input detail affects model quality.
+
+For each run, the description was provided to the tool via the app interface, which used the Gemini API to generate a simulation model along with its assumptions and a block diagram. The generated model was then manually compared against the corresponding ground truth model from `error-characterisation/groundtruth_models/`.
+
+Errors were identified and counted across the following categories:
+
+| Error Type | Description |
+|---|---|
+| Type Mismatch Error | A model element is assigned the wrong type |
+| Naming Error | Incorrect or inconsistent naming of nodes or edges |
+| Parameter Error | Wrong values assigned to model parameters |
+| Hallucinating: Nodes | Nodes present in the generated model but absent from the ground truth |
+| Hallucinating: Edges | Edges present in the generated model but absent from the ground truth |
+| Hallucinating: Parameters | Parameters introduced by the model with no basis in the description |
+| Hierarchy Mismatch Error | Incorrect nesting or structural hierarchy of components |
+| Syntax Error | General syntactic incorrectness in the generated model |
+| FactorySimPy Syntax Violation | Violations specific to the FactorySimPy modelling framework |
+
+Where the generated model did not match the ground truth, the assumptions or the input description were revised and the model was regenerated. This refinement was repeated iteratively — some experiments converged in a single run, while others required up to three iterations. All comparisons and error classifications were performed manually by the authors.
+
+---
+
+## Running the Experiment
+
+This section describes how to run the experiments and evaluate the generated models against the ground truth.
+
+**Step 1 — Open `error-characterisation/experiments.csv`**
+
+Each row in the CSV corresponds to one experiment and contains a coarse description and a detailed description of the factory system to be modelled.
+
+**Step 2 — Paste a description into the app**
+
+In the running Streamlit app, paste either the coarse or detailed description from the `Description` column into the input field and click **"Generate Model"**.
+
+The tool will produce:
+- A simulation model along with the assumptions it made during generation
+- A block diagram visualising the model structure
+
+**Step 3 — Save the outputs**
+
+Save both the generated model and the block diagram locally for comparison.
+
+**Step 4 — Compare against the ground truth**
+
+Open the corresponding ground truth model from `error-characterisation/groundtruth_models/` and compare it with the generated model. The reference block diagram in `error-characterisation/Diagrams/` can help with visual comparison.
+
+**Step 5 — Refine and iterate**
+
+If the generated model does not match the ground truth, adjust either the assumptions directly in the app or revise the description and regenerate. Repeat until the model converges to the ground truth.
+
+> **Tip:** The generated models from our own experimental runs are available in `error-characterisation/generated_models/` and can be used as a reference to gauge expected output quality.
+
+---
+
 
 ## Results and Artifacts
 
