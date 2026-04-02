@@ -1,4 +1,5 @@
-# On Integrating Resilience and Human Oversight into LLM-Assisted Modeling Workflows for Digital Twins
+## Paper Title 
+On Integrating Resilience and Human Oversight into LLM-Assisted Modeling Workflows for Digital Twins
 
 ---
 
