@@ -110,23 +110,22 @@ For each run, the description was provided to the tool via the app interface, wh
 
 Errors were identified and counted across the following categories:
 
-| Error Type | Description |
-|---|---|
-| Type Mismatch Error | A model element is assigned the wrong type |
-| Naming Error | Incorrect or inconsistent naming of nodes or edges |
-| Parameter Error | Wrong values assigned to model parameters |
-| Hallucinating: Nodes | Nodes present in the generated model but absent from the ground truth |
-| Hallucinating: Edges | Edges present in the generated model but absent from the ground truth |
-| Hallucinating: Parameters | Parameters introduced by the model with no basis in the description |
-| Hierarchy Mismatch Error | Incorrect nesting or structural hierarchy of components |
-| Syntax Error | General syntactic incorrectness in the generated model |
-| FactorySimPy Syntax Violation | Violations specific to the FactorySimPy modelling framework |
+| ID | Error Type | Description |
+|---|---|---|
+| T1 | Naming Error | Inconsistent identifiers, off-by-one indexing, or violated naming conventions |
+| T2 | Parameter Error | Incorrect parameter values, misapplied defaults, or ambiguous conflict resolution |
+| T3 | Node Hallucination | Addition or omission of nodes (machines, buffers, sources, sinks) |
+| T4 | Edge Hallucination | Addition or omission of edges (connections between components) |
+| T5 | Parameter Hallucination | Generation of parameter specifications not present in the description, or incorrect parameter structures |
+| T6 | Hierarchy Mismatch | Incorrect hierarchical structure, flattening of nested subsystems, or misplaced component scope |
+| T7 | Python Syntax Error | Malformed expressions, undefined variables, or indentation errors |
+| T8 | FactorySimPy Violation | Invalid edge cardinality, incompatible connections, or unsupported specifications |
 
 Where the generated model did not match the ground truth, the assumptions or the input description were revised and the model was regenerated. This refinement was repeated iteratively — some experiments converged in a single run, while others required up to three iterations. All comparisons and error classifications were performed manually by the authors.
 
 ---
 
-## Running the Experiment
+## Steps Followed While Running The Experiment
 
 This section describes how to run the experiments and evaluate the generated models against the ground truth.
 
@@ -154,8 +153,9 @@ Open the corresponding ground truth model from `error-characterisation/groundtru
 
 If the generated model does not match the ground truth, adjust either the assumptions directly in the app or revise the description and regenerate. Repeat until the model converges to the ground truth.
 
-> **Tip:** The generated models from our own experimental runs are available in `error-characterisation/generated_models/` and can be used as a reference to gauge expected output quality.
 
+
+---
 ---
 
 
