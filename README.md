@@ -11,11 +11,6 @@
 
 **Corresponding author for artifact evaluation:** Lekshmi P
 
----
-
-## Repository
-
-https://github.com/InferaFactorySim/FactoryFlow/tree/main/FactoryFlow_artifacts_eval
 
 ---
 
