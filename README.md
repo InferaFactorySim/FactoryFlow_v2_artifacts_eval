@@ -94,7 +94,7 @@ If it loads without errors, the installation is complete.
 
 The experiment consisted of 35 factory system scenarios, each described at two levels of granularity — a coarse description and a detailed description — resulting in 70 runs in total. The two description types were evaluated independently to assess how the level of input detail affects model quality.
 
-For each run, the description was provided to the tool via the app interface, which used the Gemini API to generate a simulation model along with its assumptions and a block diagram. The generated model was then manually compared against the corresponding ground truth model from `error-characterisation/groundtruth_models/`.
+For each run, the description was provided to the tool via the app interface, which used the Gemini API to generate a simulation model along with its assumptions and a block diagram. The generated model was then manually compared against the corresponding ground truth model from `error-characterization/groundtruth_models/`.
 
 Errors were identified and counted across the following categories:
 
@@ -117,7 +117,7 @@ Where the generated model did not match the ground truth, the assumptions or the
 
 This section describes how to run the experiments and evaluate the generated models against the ground truth.
 
-**Step 1 — Open `error-characterisation/experiments.csv`**
+**Step 1 — Open `error-characterization/experiments.csv`**
 
 Each row in the CSV corresponds to one experiment and contains a coarse description and a detailed description of the factory system to be modelled.
 
@@ -135,7 +135,7 @@ Save both the generated model and the block diagram locally for comparison.
 
 **Step 4 — Compare against the ground truth**
 
-Open the corresponding ground truth model from `error-characterisation/groundtruth_models/` and compare it with the generated model. The reference block diagram in `error-characterisation/Diagrams/` can help with visual comparison.
+Open the corresponding ground truth model from `error-characterization/groundtruth_models/` and compare it with the generated model. The reference block diagram in `error-characterization/Diagrams/` can help with visual comparison.
 
 **Step 5 — Refine and iterate**
 
@@ -145,14 +145,14 @@ If the generated model does not match the ground truth, adjust either the assump
 
 ## Results and Artifacts
 
-The `error-characterisation/` directory contains all files needed to reproduce the experiments reported in the paper:
+The `error-characterization/` directory contains all files needed to reproduce the experiments reported in the paper:
 
 | Path | Contents |
 |------|----------|
-| `error-characterisation/experiments.csv` | Coarse and detailed descriptions used for each experiment |
-| `error-characterisation/groundtruth_models/` | Ground truth models for each experiment |
-| `error-characterisation/Diagrams/` | Block diagrams of the corresponding models |
-| `error-characterisation/generated_models/` | Results produced during our experiments (as reported in the paper) |
+| `error-characterization/experiments.csv` | Coarse and detailed descriptions used for each experiment |
+| `error-characterization/groundtruth_models/` | Ground truth models for each experiment |
+| `error-characterization/Diagrams/` | Block diagrams of the corresponding models |
+| `error-characterization/generated_models/` | Results produced during our experiments (as reported in the paper) |
 
 ---
 
